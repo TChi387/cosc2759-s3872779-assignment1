@@ -34,6 +34,21 @@ Problems identified:
 
 ### 1.2 Proposed Solution
 
+The proposed solution is to implement a Continuous Integration (CI) pipeline through GitHub Actions.
+
+The pipeline automatically performs software quality checks whenever changes are made and pushed to a branch, or when a pull request is created which provides developers quick feedback about their changes and if it passes the project's quality and testing requirements.
+
+The CI pipeline utilises existing npm scripts which were provided through the Notes application to which is automated through GitHub Actions.
+
+So far the pipeline currently includes:
+- Installing project dependencies
+- Performing static code analysis using ESLint
+- Running Jest unit tests
+- Generating code coverage information
+- Uploading the generated coverage as a GitHub Actions artifact
+
+*More CI stages will be added on as implementation progresses
+
 ## 2. Heading
 ### 2.1 Subheading 
 ### 2.2 Subheading 
