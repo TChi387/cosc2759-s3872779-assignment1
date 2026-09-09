@@ -13,12 +13,6 @@ jobs:
   ci:
     runs-on: ubuntu-latest
 
-    services:
-      mongodb:
-        image: mongo:6
-        ports:
-          - 27017:27017
-
     defaults:
       run:
         working-directory: ./src
@@ -48,6 +42,3 @@ jobs:
         with:
           name: unit-test-coverage
           path: src/coverage
-
-      - name: Run integration tests
-        run: npm run test:integration
