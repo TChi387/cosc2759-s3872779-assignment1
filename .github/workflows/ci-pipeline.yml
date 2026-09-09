@@ -51,3 +51,11 @@ jobs:
 
       - name: Run integration tests
         run: npm run test:integration
+
+      - name: Create deployment package
+        if: github.ref == 'refs/heads/main'
+        run: |
+          mkdir -p ../artifact
+          cp -r . ../artifact/src
+          cd ../artifact
+          zip -r notes-app.zip src
