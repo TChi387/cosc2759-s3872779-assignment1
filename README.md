@@ -20,6 +20,7 @@
     <img src="/img/md.png" style="height: 70px;"/>
 
 6. Only edit THIS README.md - not the src/README.md
+
 ## 1. Analysis & Justification
 ### 1.1 Problem Analysis
 The Notes Application was built and deployed directly from the lead developer's computer and in doing so had created a dependency on a singular developer which meant that software releases could have been delayed whenever that dev was unavailable.
@@ -49,6 +50,48 @@ So far the pipeline currently includes:
 
 *More CI stages will be added on as implementation progresses
 
-## 2. Heading
-### 2.1 Subheading 
-### 2.2 Subheading 
+## 2. CI Pipeline
+### 2.1 Pipeline Triggers 
+The CI Pipeline is configured to run whenever changes are pushed in any branch in the repository. It'll also run when a pull request is created or updated.
+
+What this means is that it will ensure that any changes made on feature branches are automatically checked before they are merged into the main branch.
+
+The triggers for the pipeline are:
+- Pushes to a branch
+- Pull Requests
+- New commits pushed to an existing pull request
+
+### 2.2 Dependency Installation
+The pipeline makes a check on the repository and installs Node.js dependencies using:
+
+npm ci
+
+The command is executed from the src directory as this is where the application's package.json and package-lock.json files are located.
+
+npm ci provides a clean and repeatable dependency installation which is based on the project's lock file.
+
+### 2.3 Static Code Analysis
+The pipeline performs static code analysis using ESLint.
+
+The command used by the pipeline is:
+
+npm run test:lint
+
+This executes the already existing ESLint configuration inside of the project and checks the source code for coding errors and other problems.
+
+If ESLint detects an error then the GitHub Actions job fails and the later stages of the pipeline aren't considered successful.
+
+### 2.4 Unit Testing
+The pipeline executes the application's Jest unit tests using:
+
+npm run test:unit
+
+The project already has an existing npm script which runs Jest against the unit test directory and enables code coverage.
+
+Unit testing provides automated verification that individual parts of the application behave as expected.
+
+### 2.5 Code Coverage 
+
+Code coverage is generated as part of the Jest unit testing stage.
+
+The coverage results are generated in the application's coverage directory.
