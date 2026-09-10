@@ -21,8 +21,9 @@
 
 6. Only edit THIS README.md - not the src/README.md
 
-## 1. Analysis & Justification
+## 1. Introduction - Analysis & Solution
 ### 1.1 Problem Analysis
+
 The Notes Application was built and deployed directly from the lead developer's computer and in doing so had created a dependency on a singular developer which meant that software releases could have been delayed whenever that dev was unavailable.
 
 Problems identified:
@@ -95,3 +96,26 @@ Unit testing provides automated verification that individual parts of the applic
 Code coverage is generated as part of the Jest unit testing stage.
 
 The coverage results are generated in the application's coverage directory.
+
+### 3. GitHub Flow
+
+### 3.1 Feature Branches
+
+Development changes are made using feature branches rather than directly modifying the main branch.
+
+Feature branches allow for individual changes to be developed and tested independently.
+
+### 3.2 Pull Requests
+
+Once work on a feature branch is complete, a pull request is created to merge the changes into the main branch.
+
+GitHub Actions automatically runs the CI pipeline against the changes made, providing automated feedback before the pull request is merged.
+
+### 4. Pipeline Results
+
+Successful pipeline runs are displayed in the GitHub Actions section of the repository.
+
+The workflow provides information about each CI stage which includes: Dependency installation, static code analysis, unit testing and code coverage.
+
+PLACEHOLDER IMG (screenshot)
+<img src="/img/md.png" style="height: 70px;"/>
