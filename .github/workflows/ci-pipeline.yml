@@ -68,7 +68,7 @@ jobs:
           path: artifact/notes-app.zip
 
       - name: Install Playwright browsers
-        run: npx playwright install --with-deps
+        run: npx playwright install
 
       - name: Start Notes application
         run: |
@@ -77,4 +77,3 @@ jobs:
         
       - name: Run end-to-end tests
         run: npm run test:e2e
-        
