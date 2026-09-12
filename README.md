@@ -206,7 +206,7 @@ If a test or quality check fails, the corresponding GitHub Actions step is marke
 For E2E failures, the Playwright report and test results can be downloaded from the workflow's artifacts to provide additional information about the failure.
 
 **Screenshot 1 - Successful CI Pipeline**
-<img src="/img/successful-cipipeline.png" style="height: 250px;"/>
+<img src="/img/successful-cipipeline.png" style="height: 750px;"/>
 
 ## 5. Pipeline Artifacts
 The CI pipeline produces the following artifacts:
