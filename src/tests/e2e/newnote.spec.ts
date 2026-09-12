@@ -26,7 +26,7 @@ test('test', async ({ page }) => {
   await expect(page).toHaveURL('http://localhost:3000/');
 
   // Click text=Delete
-  await page.locator('text=Delete').click();
+  await page.locator('.card', { hasText: 'E2E Test' }).getByRole('button', { name: 'Delete' }).click(); // Deletes the E2E Test note specifically
   await expect(page).toHaveURL('http://localhost:3000/');
 
 });
